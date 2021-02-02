@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Star Wars Episode V",
+    "description": "The empire strikes back! our heroes must defend the base in Hoth",
+    "shortDescription": "The second movie of the original saga",
+    "duration": 114,
+    "releaseDate": "1980",
+    "images": {
+      "cover": "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY1200_CR70,0,630,1200_AL_.jpg",
+      "poster": "https://www.comixology.com/Star-Wars-Episode-V-The-Empire-Strikes-Back/digital-comic/260441?ref=c2l0ZS9saXN0L2Rlc2t0b3AvZ3JpZExpc3QvbGlzdDc3OTQ"
+    },
+    "genres": ["sci-fi", "action"],
+    "actors": ["Mark Hamill", "Harrison ford"]
+  },
+  {
+    "title": "Inception",
+    "description": "Inception is a 2010 science fiction action film written and directed by Christopher Nolan, who also produced the film with his wife, Emma Thomas. The film stars Leonardo DiCaprio as a professional thief who steals information by infiltrating the subconscious of his targets. He is offered a chance to have his criminal history erased as payment for the implantation of another person's idea into a target's subconscious.The ensemble cast includes.",
+    "shortDescription": "Great movie",
+    "duration": 240,
+    "releaseDate": "2009",
+    "images": {
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfzT9O0IBDumCXZjeAIhSYLANDT5ip_dwMNKr9-fBQfaSuD3sv",
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfzT9O0IBDumCXZjeAIhSYLANDT5ip_dwMNKr9-fBQfaSuD3sv"
+    },
+    "genres": ["sci-if", "action"],
+    "actors": ["Ken Watanabe", "Joseph Gordon-Levitt", "Marion Cotillard", "Elliot Page", "Tom Hardy", "Dileep Rao", "Cillian Murphy", "Tom Berenger", "Michael Caine"]
+  },
+  {
+    "title": "Star Wars Episode IV",
+    "description": "The empire strikes back! our heroes must defend the base in Hoth",
+    "shortDescription": "The second movie of the original saga",
+    "duration": 114,
+    "releaseDate": "1980/07/31",
+    "images": {
+      "cover": "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY1200_CR70,0,630,1200_AL_.jpg",
+      "poster": "https://www.comixology.com/Star-Wars-Episode-V-The-Empire-Strikes-Back/digital-comic/260441?ref=c2l0ZS9saXN0L2Rlc2t0b3AvZ3JpZExpc3QvbGlzdDc3OTQ"
+    },
+    "genres": ["sci-if", "action"],
+    "actors": ["Mark Hamill", "Harrison ford"]
+  }
+]
