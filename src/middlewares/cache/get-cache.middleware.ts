@@ -1,7 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
+import { ResultsLog } from '../../constants';
 
 import { myCache, successResponse } from '../../utils';
-import { errorLog } from '../../utils/logger/logger';
+import { errorLog, infoLog } from '../../utils/logger/logger';
 
 
 /**
@@ -13,13 +14,13 @@ import { errorLog } from '../../utils/logger/logger';
  */
 export const getCacheMiddleware = (req: Request, res: Response, next: NextFunction): void => {
   try {
-    const cacheKey = `${req.host}${req.baseUrl}${req.url}`;
+    const cacheKey = `${req.hostname}${req.baseUrl}${req.url}`;
     const chacheData = myCache.get(cacheKey);
     
     if (!chacheData) {
       return next();
     }
-
+    infoLog('getChacheMiddleware', req, ResultsLog.SUCCESS);
     return successResponse(res, chacheData);
   } catch (e) {
     errorLog(e, req);

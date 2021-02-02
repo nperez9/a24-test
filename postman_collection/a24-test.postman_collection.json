@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "5d8c81b4-933d-4713-924f-7a1fd9fe86a7",
+		"name": "a24-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/health",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all Movies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Star Wars IV\",\n    \"description\": \"The\",\n    \"shortDescription\": \"The second movie of the original saga\",\n    \"duration\": 120,\n    \"releaseDate\": \"1980/07/31\",\n    \"images\": {\n        \"cover\": \"https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY1200_CR70,0,630,1200_AL_.jpg\",\n        \"poster\": \"https://www.comixology.com/Star-Wars-Episode-V-The-Empire-Strikes-Back/digital-comic/260441?ref=c2l0ZS9saXN0L2Rlc2t0b3AvZ3JpZExpc3QvbGlzdDc3OTQ\"\n    },\n    \"genres\": [\"sci-if\", \"action\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/movies?limit=1&page=2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get One Movie",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Star Wars IV\",\n    \"description\": \"The\",\n    \"shortDescription\": \"The second movie of the original saga\",\n    \"duration\": 120,\n    \"releaseDate\": \"1980/07/31\",\n    \"images\": {\n        \"cover\": \"https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY1200_CR70,0,630,1200_AL_.jpg\",\n        \"poster\": \"https://www.comixology.com/Star-Wars-Episode-V-The-Empire-Strikes-Back/digital-comic/260441?ref=c2l0ZS9saXN0L2Rlc2t0b3AvZ3JpZExpc3QvbGlzdDc3OTQ\"\n    },\n    \"genres\": [\"sci-if\", \"action\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/movies/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Star Wars V\",\n    \"description\": \"The empire strikes back! our heroes must defend the base in Hoth\",\n    \"shortDescription\": \"The second movie of the original saga\",\n    \"duration\": 114,\n    \"releaseDate\": \"1980/07/31\",\n    \"images\": {\n        \"cover\": \"https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY1200_CR70,0,630,1200_AL_.jpg\",\n        \"poster\": \"https://www.comixology.com/Star-Wars-Episode-V-The-Empire-Strikes-Back/digital-comic/260441?ref=c2l0ZS9saXN0L2Rlc2t0b3AvZ3JpZExpc3QvbGlzdDc3OTQ\"\n    },\n    \"genres\": [\"sci-if\", \"action\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/movies/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Movie",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Star Wars IV\",\n    \"description\": \"The\",\n    \"shortDescription\": \"The second movie of the original saga\",\n    \"duration\": 120,\n    \"releaseDate\": \"1980/07/31\",\n    \"images\": {\n        \"cover\": \"https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY1200_CR70,0,630,1200_AL_.jpg\",\n        \"poster\": \"https://www.comixology.com/Star-Wars-Episode-V-The-Empire-Strikes-Back/digital-comic/260441?ref=c2l0ZS9saXN0L2Rlc2t0b3AvZ3JpZExpc3QvbGlzdDc3OTQ\"\n    },\n    \"genres\": [\"sci-if\", \"action\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/movies/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete Movie",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/movies/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "7d3531aa-873c-4a62-8760-372b19e3231e",
+			"key": "id",
+			"value": "6018c2655a997835fca00523"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

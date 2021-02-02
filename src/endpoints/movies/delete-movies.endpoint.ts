@@ -15,7 +15,7 @@ export const deleteMovies = async (req: Request, res: Response): Promise<void> =
       return documentNotFoundResponse(res, 'Movie', 200, { id });
     }
 
-    successResponse(res, result);
+    successResponse(res, 'Movie deleted successfully');
     infoLog('deleteMoviesEndpoint', req, ResultsLog.SUCCESS);
   } catch (e) {
     errorLog(e, req);
