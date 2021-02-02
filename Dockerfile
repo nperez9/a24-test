@@ -2,12 +2,9 @@ FROM node:10-alpine
 
 ARG NODE_ENV=${NODE_ENV:-development}
 # Create app directory
-WORKDIR /usr/src/api-auth
+WORKDIR /usr/src/a24
 
 COPY . .
-
-# Necesary to build bcrypt
-RUN apk --no-cache add --virtual builds-deps build-base python
 
 RUN npm install
 RUN npm run build

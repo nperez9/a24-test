@@ -30,3 +30,17 @@ export const errorResponse = (res: Response, code: number, message: string, addi
     additionalData,
   });
 }
+
+/**
+ * Return an error when the register to found isn't in database
+ * @param {Request} res Express response
+ * @param {string} message Error message to display
+ * @param {number} code Http Code
+ * @param {string} additionalData any addional data than the error needs
+ */
+export const documentNotFoundResponse = (res: Response, document: string, code: number = 200, additionalData?: any): void => {
+  res.status(code).json({
+    message: `${document} Not found`,
+    additionalData,
+  });
+}

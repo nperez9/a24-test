@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 
 import { ERROR, ResultsLog } from '../../constants'
 import MoviesModel from '../../models/movies.model';
-import { errorResponse, successResponse } from '../../utils';
+import { documentNotFoundResponse, errorResponse, successResponse } from '../../utils';
 import { errorLog, infoLog } from '../../utils/logger/logger';
 
 export const updateMovies = async (req: Request, res: Response): Promise<void> => {
@@ -12,8 +12,12 @@ export const updateMovies = async (req: Request, res: Response): Promise<void> =
     const { id } = req.params;
 
     const result = await MoviesModel.findOneAndUpdate({_id: id}, { $set: { ...movie }}, {upsert: false, new: true});
-    console.info(result);
+    if (!result) {
+      return documentNotFoundResponse(res, 'Movie', 200, { id });
+    }
+
     successResponse(res, result);
+    infoLog('updateMoviesEndpoint', req, ResultsLog.SUCCESS);
   } catch (e) {
     errorLog(e, req);
     errorResponse(res, 500, ERROR.DEFAULT);

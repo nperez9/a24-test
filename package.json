@@ -21,6 +21,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.16",
     "node-cache": "^5.1.2",
+    "qs-to-mongo": "^2.0.0",
     "swagger-ui-express": "^4.1.4",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.4.2"
