@@ -1,0 +1,72 @@
+openapi: 3.0.0
+info:
+  title: Movies api
+  description: Movies api description
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000/api
+    description: server of movie api
+paths:
+  /movies:
+    get:
+      summary: Returns a list of Movies.
+      description: Retunrs a list of Movies with pagination.
+      tags: 
+        - Movies
+      paremeters:
+        - in: query
+          name: limit
+          description: Defines a limit
+          schema:
+            type: string
+      responses:
+        '200':    # status code
+          description: Returns an array of movies
+          content:
+            application/json:
+              schema: 
+                type: object
+                items: 
+                  type: string
+components:
+  schemas:
+    Movie:
+      schema:
+        type: object
+          properties:
+            title:
+              type: string
+              example: Django
+              required: true
+            description:
+              type: string
+              example: the description of the movie
+              required: true
+            shotDescription:
+              type: string
+              example: A great movie of Tarantino
+              required: true
+            duration:
+              type: number
+              example: 112
+              description: duration of the movie in minits
+              required: true
+            created_at:
+              type: string
+              example: 2020/10/12::00:20:30zzHH
+            releaseDate:
+              type: string
+              example: 2015
+              required: true
+            images:
+              type: object
+              properties:
+                cover: 
+                  type: string
+                  required: true
+                poster: 
+                  type: string
+                captures:
+                  type: array
+                  items:
+                    type: string
