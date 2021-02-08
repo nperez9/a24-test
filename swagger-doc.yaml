@@ -11,7 +11,7 @@ paths:
     get:
       summary: Returns a list of Movies.
       description: Retunrs a list of Movies with pagination.
-      tags: 
+      tags:
         - Movies
       paremeters:
         - in: query
@@ -20,53 +20,66 @@ paths:
           schema:
             type: string
       responses:
-        '200':    # status code
+        "200": # status code
           description: Returns an array of movies
           content:
             application/json:
-              schema: 
+              schema:
                 type: object
-                items: 
+                items:
                   type: string
 components:
   schemas:
     Movie:
-      schema:
-        type: object
+      type: object
+      required:
+        - title
+        - description
+        - shotDescription
+        - duration
+        - releaseDate
+        - images
+        - genres
+      properties:
+        title:
+          type: string
+          example: Django
+        description:
+          type: string
+          example: the description of the movie
+        shotDescription:
+          type: string
+          example: A great movie of Tarantino
+        duration:
+          type: number
+          example: 112
+          description: duration of the movie in minits
+        created_at:
+          type: string
+          example: 2020/10/12::00:20:30zzHH
+        releaseDate:
+          type: string
+          example: 2015
+        images:
+          type: object
+          required:
+            - cover
           properties:
-            title:
+            cover:
               type: string
-              example: Django
-              required: true
-            description:
+            poster:
               type: string
-              example: the description of the movie
-              required: true
-            shotDescription:
-              type: string
-              example: A great movie of Tarantino
-              required: true
-            duration:
-              type: number
-              example: 112
-              description: duration of the movie in minits
-              required: true
-            created_at:
-              type: string
-              example: 2020/10/12::00:20:30zzHH
-            releaseDate:
-              type: string
-              example: 2015
-              required: true
-            images:
-              type: object
-              properties:
-                cover: 
-                  type: string
-                  required: true
-                poster: 
-                  type: string
-                captures:
-                  type: array
-                  items:
-                    type: string
+            captures:
+              type: array
+              items:
+                type: string
+        genres:
+          type: array
+          items:
+            type: string
+        actors:
+          type: array
+          items:
+            type: string
+        platformProduct:
+          type: boolean
